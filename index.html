@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Iwu Portfolio</title>
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/side-kick.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">	
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.body {
+			width: 100%;
+			margin: auto;
+			height: 100vh;
+			transition: all 0.4s cubic-bezier(0,0,0.25,1);
+			overflow-y: scroll;
+		}
+		header {
+			background: #353535;
+			height: 100vh;
+			transition: all 0.4s cubic-bezier(0,0,0.25,1);
+		}
+		nav li {
+			display: inline;
+			padding: 20px 15px;
+			color: #555;
+			font-weight: 600;
+			font-size: 11px;
+			font-family: lato;
+			letter-spacing: 1px;
+		}
+		nav {
+			margin-left: auto;
+			width: max-content;
+			padding: 20px 0;
+		}
+		a {
+			color: inherit;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		nav li a{
+			transition: all 0.3s;
+			position: relative;
+			padding: 5px 10px;
+		}
+
+		nav li a::after{
+			background: #cb464654;
+			width: 0%;
+			position: absolute;
+			content: '';
+			height: 100%;
+			left: 0;
+			z-index: 0;
+			transition: all 0.3s;
+		}
+		nav li:hover a::after {
+			width: 100%;
+			transition: all 0.3s;
+
+		}
+		nav li a:hover{
+			color:#fff;
+			text-decoration: none;
+			transition: all 0.3s;
+		}
+		.active::before {
+			background: #bdff13;
+			width: 35%;
+			position: absolute;
+			left: 25px;
+			content: '';
+			height: 3px;
+		}
+		.active {
+			color: #fff;
+			position: relative;
+		}
+		.color1 {
+			color: #fff;
+		}
+		.color2 {
+			color: #bdff13;
+		}
+		.padding {
+			padding: 60px 40px;
+		}
+		.hire:hover {
+			transform: scale(0.9);
+			transition: all 0.3s;
+			cursor:pointer;
+			background: #c4ff72;
+		}
+		.hire {
+			transform: scale(1);
+			transition: all 0.3s;
+			cursor:pointer;
+			padding:  5px 20px; background:  #d5e51e; border:  0; font-weight: 600; color: #212121; box-shadow: 0 1em 2em #00000047; 
+		}
+		.about {
+			max-width: 700px;
+			text-align:  justify;
+			background: #d5e51e;
+			padding: 40px 65px;
+			margin: -50px auto;
+			font-size:  14px;
+			margin-bottom: 0;
+			/*box-shadow: 0 2em 7em #00000087;*/
+		}
+		.about h1 {
+			font-size: 9em;
+			color: #69a911;
+			position: relative;
+		}
+		.about h1::before {
+		    width: 100px;
+		    height: 10px;
+		    background: #69a911;
+		    content: '';
+		    position: absolute;
+		    top: 50%;
+		}
+		.about h1::after {
+		    width: 200px;
+		    height: 10px;
+		    background: #69a911;
+		    content: '';
+		    position: absolute;
+		    top: 50%;
+		}
+		.col-sm-6.cliss {
+		    height: 350px;
+		    background: #eee;
+		}
+		.qtn {
+			cursor: help;
+		}
+		section {
+			display: none;
+		}
+		footer {
+			display: none;
+		}
+		.container {
+			display: none;
+		}
+		.shh {
+			opacity: 1;
+			transform: scale(0.98) translateX(50px);
+			transition: all 3s cubic-bezier(0,0,0.25,1);
+		}
+		.proff {
+			opacity: 0;
+			transition: all 0.3s
+		}
+		span svg {
+			margin: 4px 7px;
+		}
+		.puff {
+			opacity: 0;
+			transition: all 1s
+
+		}
+		.cliss img {
+			height: 100%;
+			margin: 5px 0;
+			transition: all .3s cubic-bezier(0,0,0.25,1);
+		}
+
+		.cliss img:hover {
+			opacity: .3;
+			cursor: pointer;			
+			transition: all .3s cubic-bezier(0,0,0.25,1);
+		}
+		.cliss {
+			overflow: hidden;
+		}
+		@media (min-width: 576px){
+		.container {
+		    max-width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="modalls" style="display:none;position: fixed;width: 100%;height: 100vh;background: #000d;left: 0;right: 0;z-index: 99;">
+		<div style="position: relative;height: 100%;">
+			<div class="modalls_cont animated zoomIn t1" style="animation-duration:.5s;position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: max-content;height:max-content;margin: auto;background: #d5e51e;">
+				
+				<div>
+					<img class="img-src" src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.1&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7pj2&amp;disp=thd&amp;attbid=ANGjdJ8rDd-r4keGwFeYhbSFOT8Ky1SjL6YFqygvyVbQ4zxt3hxFhV4QU3Uz-Gr5xcMINDV_YR92i365_q4kjwAAqX24fLsD92cERoZzDnBNezbGYcRj4f9whDGRlos&amp;ats=2524608000000&amp;sz=w887-h662" alt="">
+					<div style="text-align:  center; padding:  30px; ">
+						View project on 
+						<a href="#" class="links" style="text-decoration:  underline; color: #224c76; "><strong></strong></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<main class="body">
+		<header class="animated protype t6 lt" style="animation-delay: .5s;">
+			<div class="container">
+				<div class="row" style="margin-bottom: 70px;">
+			
+					<div class="col-sm-3">
+						<img src="img/ai.png?t=111111" class="animated fadeInDown" style="width:  60px; margin: 10px auto; filter: invert(100);animation-delay: 0.5s; ">
+					</div>
+					<div class="col-sm-12 col-md-9 animated fadeInDown" style="animation-delay: 0.5s;">
+						<nav>
+							<li class="active"><a class="pisces" href="">HOME</a></li>
+							<li><a class="pisces" href="">ABOUT</a></li>
+							<li><a class="pisces" href="">WORKS</a></li>
+							<li><a href="">RESUME</a></li>
+							<li><a class="pisces" href="">CONTACT</a></li>
+						</nav>
+					</div>
+			
+				</div>
+				<div class="row" style="padding: 0 50px;">
+					<div class="col-sm-6 col-md-6 col-lg-4" style="overflow: hidden; padding: 0;">
+						<div class="animated card-swipe2 left fiver" style="height: 100%;background: #fff;animation-delay: 0.1s; "></div>
+						<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.9&amp;permmsgid=msg-f:1611884309050208794&amp;th=165e903d2bf6b21a&amp;view=fimg&amp;realattid=f_jm6ookkp8&amp;disp=thd&amp;attbid=ANGjdJ9FHGjf70xYYPiKz7Kl8HcbB7cBu1Q3gPBkPvp-Dd3mtHx2EiGHGncIgkjPYqauZUWRWyJRIjliL7dJLR9OZ3_wc9sdYQ24jzIJEg_6_kPhNBG63BLs__Sk8OM&amp;ats=2524608000000&amp;sz=w1087-h700" class="proff" style="position:  absolute; top:  0; height: 100%; margin-left: -43%;z-index: -1; ">
+
+						<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.1&amp;permmsgid=msg-f:1611886275842421173&amp;th=165e920719ea31b5&amp;view=fimg&amp;realattid=f_jm6pu10j0&amp;disp=thd&amp;attbid=ANGjdJ-J7sdehiRxzN_6h7M0s7EaCkA7tM5gPOYvwbnjvp6Cvv_FUGRsW4aPS7u7RpUf0LupJtbTsKqtp4lRZD1FqTBdFOt0TLh1Givr3VCFwi4OBPKv4yqsImbEZYA&amp;ats=2524608000000&amp;sz=w1366-h700" class="puff" style="position:  absolute; top:  0; height: 100%; ">
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-8 color1 padding">
+					  	<p class="animated fadeInUp" style="animation-delay: 0.5s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed itaque assumenda perferendis voluptatum illum excepturi suscipit delectus, sunt, officia ab unde minus, sit, eos minima nostrum non molestiae corrupti architecto.</p>
+					  	<p class="animated fadeInUp" style="animation-delay: 0.55s;">And i am named <span class="color2 qtn">Iwu Ikechukwu.</span></p>
+					  	<button class="hire animated fadeIn" style="animation-delay: 0.6s;">HIRE ME!</button>
+					  	<div style="position:  absolute; top: 0; z-index:  -1; filter: invert(50); opacity: .1; ">
+					  		<svg xmlns="http://www.w3.org/2000/svg" width="557" height="542" viewBox="0 0 557 542" fill="none">
+					  		<g filter="url(#filter0_b)">
+					  		<rect x="1" y="1" width="375" height="360" stroke="#2D2A2A" stroke-opacity="0.41" stroke-width="2"></rect>
+					  		</g>
+					  		<g filter="url(#filter1_b)">
+					  		<rect x="91" y="91" width="375" height="360" stroke="#2D2A2A" stroke-opacity="0.41" stroke-width="2"></rect>
+					  		</g>
+					  		<g filter="url(#filter2_b)">
+					  		<rect x="181" y="181" width="375" height="360" stroke="#2D2A2A" stroke-opacity="0.41" stroke-width="2"></rect>
+					  		</g>
+					  		<defs>
+					  		<filter id="filter0_b" x="-9" y="-9" width="395" height="380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					  		<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+					  		<feGaussianBlur in="BackgroundImage" stdDeviation="4.5"></feGaussianBlur>
+					  		<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"></feComposite>
+					  		<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"></feBlend>
+					  		</filter>
+					  		<filter id="filter1_b" x="81" y="81" width="395" height="380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					  		<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+					  		<feGaussianBlur in="BackgroundImage" stdDeviation="4.5"></feGaussianBlur>
+					  		<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"></feComposite>
+					  		<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"></feBlend>
+					  		</filter>
+					  		<filter id="filter2_b" x="171" y="171" width="395" height="380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+					  		<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+					  		<feGaussianBlur in="BackgroundImage" stdDeviation="4.5"></feGaussianBlur>
+					  		<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"></feComposite>
+					  		<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"></feBlend>
+					  		</filter>
+					  		</defs>
+					  		</svg>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div id="ABOUT" class="about animated fadeInUp" style="">
+				<h1 style="">About</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id repudiandae accusamus, inventore illo animi doloremque fugiat aperiam odit molestias ipsum nesciunt harum cumque quo expedita provident non, dolorem natus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id repudiandae accusamus, inventore illo animi doloremque fugiat aperiam odit molestias ipsum nesciunt harum cumque quo expedita provident non, dolorem natus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos id repudiandae accusamus, inventore illo animi doloremque fugiat aperiam odit molestias ipsum nesciunt harum cumque quo expedita provident non, dolorem natus.
+				</p>
+			</div>
+			<div id="WORKS" style="margin: 100px auto; width:  80%; ">
+				<h6 style="text-align: center;margin-bottom: 20px; ">MY PORTFOLIO</h6>
+				<div class="container">
+					<div class="row">
+				
+						<div class="col-sm-6 cliss" data-info="Behance" style="background: #eff; ">
+							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.1&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7pj2&amp;disp=thd&amp;attbid=ANGjdJ8rDd-r4keGwFeYhbSFOT8Ky1SjL6YFqygvyVbQ4zxt3hxFhV4QU3Uz-Gr5xcMINDV_YR92i365_q4kjwAAqX24fLsD92cERoZzDnBNezbGYcRj4f9whDGRlos&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying lOVREN.png" aria-hidden="true">
+						</div>
+						<div class="col-sm-6 cliss" data-info="Behance">
+							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.2&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7nr0&amp;disp=thd&amp;attbid=ANGjdJ-KyDMg7jzwUB7zpxvHh1Vz-67tB7yU-30AReeg_pvFJ9GUdNnyw3kYbKoitPVzYJaRfaktq1G8NBUzAwpN8KC1G4yj9vmDJys-poOXpAjlHXvC6U_mKvY0aAs&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying daybreak.png" aria-hidden="true">
+						</div>
+				
+					</div><div class="row">
+				
+						<div class="col-sm-6 cliss" data-info="Behance" style="">
+							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.3&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7p51&amp;disp=thd&amp;attbid=ANGjdJ-R32m0PTxqefLQtRvDXZ4D65T0EFF6cPVL2MOilmdBfbmhUNf7AL4oV2RtWzq9hmNRGnjegA92aHmOATsSdcFN8JN9rdngixGHW_dXRolv-K-ATjjz4COohfs&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying immi.png" aria-hidden="true">
+						</div>
+						<div class="col-sm-6 cliss" data-info="Github" style="background: #eff; ">
+							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.4&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6ssjza3&amp;disp=thd&amp;attbid=ANGjdJ9_szmGOazjPSJ3ZC0EyvvSOqJGkFueXyr0PYrEh2DU-dLBCithcZSTiMX5rnQXQr5XDV8g0SwgfO9SMvUeLr74tAHbDNkQXYHlS0ln27yb-Jy-I2XR5gpzfAc&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying VOLKS.png" aria-hidden="true">
+						</div>
+				
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer id="CONTACT" style="background:  #000; padding: 40px; color: #aaa; ">
+			<div class="container">
+				<div class="row">
+			
+					<div class="col-sm-6" style="font-size: 13px;">
+						<h6 style="color: #fff; ">Want to get in touch?</h6> 
+						<p>Am always a call or mail away!</p>
+						<div class="row" style="text-align: center;">
+							<div class="col-sm-6">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+									<g filter="url(#filter0_d)">
+									<path d="M28.8745 18.897C28.8045 19.0046 28.8045 19.1122 28.7696 19.2556C28.7346 19.7218 29.0844 20.1521 29.5392 20.1879C29.9941 20.2238 30.4139 19.8652 30.4489 19.3991C30.4489 19.2915 30.4489 19.1839 30.4839 19.0046C30.4839 18.8253 30.4839 18.7178 30.4839 18.6102C30.4839 17.5703 30.3089 16.5663 29.9941 15.5981C29.5742 14.3431 28.8395 13.2315 27.9649 12.2992C26.8803 11.1877 25.5509 10.3988 24.0465 9.9685C23.3468 9.78921 22.5771 9.68164 21.8424 9.68164C21.5975 9.68164 21.3526 9.68164 21.0727 9.7175C20.8278 9.75336 20.5829 9.78921 20.338 9.82507C19.8832 9.89679 19.5683 10.3629 19.6732 10.7932C19.7432 11.2594 20.198 11.5821 20.6179 11.4745C20.8278 11.4387 21.0027 11.4028 21.2126 11.4028C21.2476 11.4028 21.2826 11.4028 21.3176 11.4028C21.4925 11.4028 21.6674 11.3669 21.8424 11.3669C23.7666 11.3669 25.5509 12.1558 26.8104 13.4825C28.0698 14.7734 28.8395 16.5304 28.8745 18.5026V18.5743C28.8745 18.7178 28.8745 18.8253 28.8745 18.897Z" fill="white"/>
+									<path d="M33.4926 19.6859C33.4576 20.1521 33.8075 20.5824 34.2623 20.6182C34.7171 20.6541 35.1369 20.2955 35.1719 19.8294C35.2069 19.4349 35.2069 19.0405 35.2069 18.6461C35.2069 17.8572 35.137 17.1042 35.032 16.3512C34.5772 13.4826 33.2127 10.9008 31.2885 8.92865C29.0844 6.66962 26.1456 5.19946 22.8919 4.94846C22.5421 4.9126 22.1572 4.9126 21.8074 4.9126C21.4225 4.9126 21.0377 4.9126 20.6528 4.94846C20.268 4.98431 19.8831 5.02017 19.4983 5.09189C19.0435 5.1636 18.7286 5.62975 18.8336 6.06004C18.9035 6.52619 19.3583 6.84891 19.7782 6.74134C20.0231 6.70548 20.233 6.66962 20.4779 6.63376C20.5828 6.63376 20.6878 6.5979 20.7928 6.5979C21.1426 6.56205 21.4925 6.56205 21.8074 6.56205C22.9969 6.56205 24.1164 6.74134 25.201 7.06405C27.0902 7.63778 28.7695 8.67765 30.134 10.0761C31.2535 11.2235 32.1632 12.622 32.7579 14.128C33.2827 15.4906 33.5976 16.9966 33.5976 18.5743C33.5976 18.6819 33.5976 18.8253 33.5976 18.9329C33.5276 19.2198 33.4926 19.4349 33.4926 19.6859Z" fill="white"/>
+									<path d="M34.6821 5.48621C31.3585 2.07974 26.8103 0 21.7724 0C21.2476 0 20.7228 0.0358576 20.198 0.0717152C19.6732 0.107573 19.1484 0.179288 18.6237 0.286861C18.1688 0.358576 17.854 0.824725 17.9589 1.25502C18.0289 1.72117 18.4837 2.04388 18.9035 1.93631C19.1484 1.90045 19.3584 1.8646 19.6033 1.82874C19.8482 1.79288 20.0931 1.75702 20.338 1.75702C20.8278 1.72117 21.2826 1.68531 21.7724 1.68531C26.3205 1.68531 30.4489 3.58576 33.4576 6.63366C36.4314 9.68155 38.2857 13.9128 38.2857 18.6101C38.2857 18.8611 38.2857 19.148 38.2857 19.399C38.2857 19.6141 38.2507 19.8293 38.2507 20.0803C38.2157 20.5464 38.5656 20.9767 39.0204 21.0126C39.4752 21.0484 39.895 20.6898 39.93 20.2237C39.965 19.6858 40 19.148 40 18.646C40 13.5183 37.9708 8.85683 34.6821 5.48621Z" fill="white"/>
+									<path d="M38.7055 27.2159L32.513 23.8095C30.4489 22.662 30.3789 23.415 28.2098 25.7816C27.685 26.3553 26.7054 27.8614 25.5509 27.5745C23.1368 26.9649 18.6237 23.3433 17.1543 21.6939C16.4545 20.905 13.4458 17.1399 13.4108 15.9208C13.3408 14.0562 17.3292 13.1239 16.0347 9.57398L13.2708 3.22718C10.6819 -2.86861 3.43981 6.88466 4.03457 11.4386C5.57395 22.662 24.7812 40.806 35.4868 34.8177C37.8659 33.4551 41.0846 28.6861 38.7055 27.2159Z" fill="white"/>
+									</g>
+									<defs>
+									<filter id="filter0_d" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+									<feOffset dy="4"/>
+									<feGaussianBlur stdDeviation="2"/>
+									<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+									<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+									</filter>
+									</defs>
+									</svg>
+								</span>
+							  	<p>+234 (814) 673 9665</p>
+							</div>
+							<div class="col-sm-6">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="49" height="39" viewBox="0 0 49 39" fill="none">
+									<g filter="url(#filter0_d)">
+									<path d="M41.339 31.0001C42.2606 31.0001 43.0591 30.7072 43.738 30.129L32.1221 18.9505C31.8434 19.1426 31.5733 19.3293 31.3181 19.5069C30.4488 20.1232 29.7433 20.6041 29.2015 20.9488C28.6598 21.2942 27.9391 21.6462 27.0395 22.0057C26.1392 22.3656 25.3005 22.5449 24.5225 22.5449H24.4997H24.477C23.6989 22.5449 22.8602 22.3656 21.96 22.0057C21.0598 21.6462 20.3391 21.2942 19.798 20.9488C19.2563 20.6041 18.5511 20.1233 17.6814 19.5069C17.439 19.3359 17.1702 19.1483 16.8796 18.9475L5.26147 30.129C5.94027 30.7072 6.73936 31.0001 7.6609 31.0001H41.339Z" fill="white"/>
+									<path d="M6.31107 11.9113C5.44186 11.3537 4.67106 10.715 4 9.99561V27.0028L14.2382 17.1505C12.19 15.7744 9.55097 14.03 6.31107 11.9113Z" fill="white"/>
+									<path d="M42.712 11.9113C39.5956 13.9411 36.947 15.6885 34.7657 17.1544L44.9999 27.0032V9.99561C44.3437 10.7005 43.5812 11.3388 42.712 11.9113Z" fill="white"/>
+									<path d="M41.3389 0H7.66096C6.48604 0 5.58274 0.381797 4.94994 1.1446C4.31663 1.90777 4.00049 2.86219 4.00049 4.00679C4.00049 4.93134 4.42002 5.93312 5.25871 7.01239C6.0974 8.09124 6.98983 8.93864 7.93556 9.55503C8.45402 9.90753 10.0175 10.9535 12.626 12.6926C14.0342 13.6316 15.2587 14.4501 16.3111 15.1563C17.208 15.7578 17.9816 16.2786 18.6203 16.7108C18.6936 16.7603 18.8089 16.8397 18.9619 16.945C19.1268 17.059 19.3355 17.2036 19.5929 17.3824C20.0886 17.7274 20.5003 18.0063 20.8283 18.2193C21.1558 18.4324 21.5527 18.6705 22.0182 18.9348C22.4834 19.1987 22.9221 19.3972 23.3339 19.5293C23.7457 19.6612 24.127 19.7274 24.4778 19.7274H24.5005H24.5233C24.874 19.7274 25.2553 19.6612 25.6673 19.5293C26.079 19.3972 26.5174 19.1992 26.9829 18.9348C27.448 18.6705 27.8443 18.4319 28.1729 18.2193C28.5008 18.0063 28.9126 17.7275 29.4084 17.3824C29.6653 17.2036 29.8739 17.0589 30.0388 16.9454C30.1919 16.8396 30.3071 16.7608 30.3809 16.7108C30.8784 16.3777 31.6538 15.859 32.6962 15.1624C34.593 13.8942 37.3865 12.0275 41.0885 9.55503C42.2018 8.80669 43.132 7.90363 43.8796 6.84714C44.6258 5.79064 44.9999 4.68242 44.9999 3.52285C44.9999 2.55403 44.6372 1.72504 43.9133 1.03458C43.1886 0.344979 42.3304 0 41.3389 0Z" fill="white"/>
+									</g>
+									<defs>
+									<filter id="filter0_d" x="0" y="0" width="48.9999" height="39.0001" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+									<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+									<feOffset dy="4"/>
+									<feGaussianBlur stdDeviation="2"/>
+									<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+									<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+									<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+									</filter>
+									</defs>
+									</svg>
+								</span>
+							  	<p>ikdaniel15@gmail.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6" style="text-align: center; font-size: 13px;">
+						<p>I am always available through these mediums</p>
+						<div>
+							<a href="https://web.facebook.com/ik.daniel">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+									<path d="M25 3.66211V21.3379C25 23.3593 23.3593 25 21.3379 25H15.4297L13.9648 23.5352H12.5L11.0352 25H3.66211C1.6407 25 0 23.3593 0 21.3379V3.66211C0 1.6407 1.6407 0 3.66211 0H21.3379C23.3593 0 25 1.6407 25 3.66211Z" fill="#7984EB"/>
+									<path d="M25 3.66211V21.3379C25 23.3593 23.3593 25 21.3379 25H15.4297L13.9648 23.5352H13.2324V0H21.3379C23.3593 0 25 1.6407 25 3.66211Z" fill="#4661D1"/>
+									<path d="M15.4297 8.78906V11.7188H19.8242L19.0918 16.1133H15.4297V25H11.0352V16.1133H8.10547V11.7188H11.0352V8.78906C11.0352 7.16305 11.9287 5.74207 13.2324 4.98047C13.8769 4.61426 14.6387 4.39453 15.4297 4.39453H19.8242V8.78906H15.4297Z" fill="#ECECF1"/>
+									<path d="M15.4297 8.78906V11.7188H19.8242L19.0918 16.1133H15.4297V25H13.2324V4.98047C13.8769 4.61426 14.6387 4.39453 15.4297 4.39453H19.8242V8.78906H15.4297Z" fill="#E2E2E7"/>
+									</svg>
+								</span>
+							</a>
+							<br>
+							<a href="https://twitter.com/ik_daniel">
+								<span>
+
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" viewBox="0 0 24 19" fill="none">
+								<path d="M8.95361 19.0001C7.91577 19.0001 6.84754 18.9188 5.77291 18.7558C3.88016 18.4687 1.96416 17.5109 1.42199 17.2241L0 16.4723L1.53954 15.9826C3.22245 15.4471 4.24618 15.115 5.51345 14.595C4.24454 14.0006 3.26658 12.9316 2.79582 11.5494L2.43766 10.4975L2.73136 10.541C2.45286 10.2695 2.23295 9.99394 2.06248 9.74314C1.45623 8.85261 1.13525 7.76406 1.20354 6.83155L1.27093 5.91356L1.8391 6.12645C1.59941 5.68862 1.4262 5.22104 1.32439 4.73079C1.07629 3.53579 1.28393 2.26605 1.90923 1.15554L2.40416 0.276695L3.06608 1.04591C5.15951 3.4784 7.81104 4.92136 10.958 5.34378C10.8295 4.48672 10.9258 3.65942 11.2446 2.91819C11.6158 2.05493 12.276 1.32274 13.1535 0.801133C14.1279 0.221789 15.3097 -0.0589385 16.481 0.0106677C17.7237 0.0843476 18.852 0.534751 19.7481 1.31388C20.1858 1.20407 20.5082 1.08664 20.944 0.927947C21.2062 0.832305 21.5036 0.724087 21.8756 0.600107L23.2467 0.14315L22.3526 2.61302C22.4116 2.60824 22.4724 2.60434 22.5359 2.60151L24 2.53739L23.1346 3.68156C23.085 3.74709 23.0724 3.76551 23.0548 3.79119C22.9851 3.89285 22.8983 4.01949 21.7105 5.55349C21.4131 5.93765 21.2646 6.43818 21.2923 6.96279C21.3975 8.9564 21.1447 10.76 20.5402 12.3235C19.9686 13.803 19.0827 15.0722 17.9076 16.0959C16.4534 17.3628 14.5991 18.23 12.396 18.6735C11.3153 18.8911 10.1548 19.0001 8.95361 19.0001Z" fill="#25D9F8"/>
+								<path d="M22.3526 2.61295L23.2466 0.142906L21.8756 0.599863C21.5035 0.723843 21.2063 0.832238 20.9439 0.927703C20.5081 1.08658 20.1859 1.204 19.7483 1.31381C18.852 0.534684 17.7239 0.0842806 16.481 0.0104236C15.3096 -0.0591827 14.1281 0.221545 13.1536 0.800888C12.7053 1.06745 12.3144 1.38891 11.9892 1.75448V18.7496C12.126 18.7258 12.2617 18.7005 12.3961 18.6734C14.599 18.2299 16.4535 17.3626 17.9077 16.0958C19.0829 15.0719 19.9687 13.8027 20.5404 12.3235C21.1448 10.7599 21.3977 8.95615 21.2924 6.96255C21.2645 6.43793 21.413 5.93758 21.7106 5.55342C22.8982 4.01942 22.9852 3.89279 23.0549 3.79112C23.0723 3.76544 23.0852 3.74684 23.1348 3.68131L23.9999 2.53733L22.536 2.60144C22.4725 2.6041 22.4115 2.60817 22.3526 2.61295Z" fill="#00C0F1"/>
+								</svg>
+								</span>
+							</a>
+							
+							
+
+							<a href="https://github.com/ikdaniel15">
+								<span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+								<path d="M25 12.5488C25 18.4082 20.8935 23.3154 15.4297 24.6338L13.9355 19.8877H11.0645L9.61914 24.6338C4.15535 23.3154 0 18.4082 0 12.5488C0 5.67875 5.62992 0 12.5 0C19.3701 0 25 5.67875 25 12.5488Z" fill="#384949"/>
+								<path d="M25 12.5488C25 18.4082 20.8935 23.3154 15.4297 24.6338L13.9355 19.8877H12.5V0C19.3701 0 25 5.67875 25 12.5488Z" fill="#293939"/>
+								<path d="M8.85159 20.9989C8.55481 20.9989 8.26508 20.9566 7.98108 20.873C7.24236 20.6548 6.64212 20.1627 6.19656 19.4124C5.99343 19.0698 5.78172 18.8324 5.53223 18.6649C5.28676 18.4997 5.09087 18.4368 4.88412 18.4519L4.75537 16.9927C5.2982 16.9462 5.81757 17.0934 6.34686 17.4476C6.77811 17.7358 7.1407 18.1343 7.45618 18.6641C7.71519 19.0998 8.01331 19.3552 8.39612 19.4683C8.82603 19.5947 9.27216 19.5419 9.84303 19.2987L10.4196 20.6447C9.86802 20.8809 9.34884 20.9989 8.85159 20.9989Z" fill="#ECECF1"/>
+								<path d="M19.5753 14.0283C19.0624 15.3905 17.7734 17.1192 14.5069 17.6025C14.9316 18.2323 15.4443 18.5693 15.4296 19.8877V24.6338C14.4922 24.8682 13.5106 25 12.4999 25C11.4892 25 10.5565 24.8682 9.61908 24.6338V19.8289C9.61908 18.5253 10.1123 18.1591 10.493 17.6025C7.2265 17.119 5.93752 15.3905 5.42463 14.0283C4.73627 12.2118 5.10248 9.95594 6.30373 8.52047C6.33291 8.4911 6.37697 8.41785 6.36228 8.37399C5.80553 6.7041 6.47939 5.3125 6.50877 5.16602C7.13857 5.35637 7.24119 4.97547 9.27728 6.22059L9.62881 6.42582C9.77529 6.51356 9.73142 6.455 9.87791 6.455C10.7274 6.22059 11.621 6.08879 12.4999 6.08879C13.3935 6.08879 14.2724 6.22059 15.1658 6.455L15.2685 6.46969C15.2685 6.46969 15.2976 6.46969 15.3711 6.42582C17.9052 4.88754 17.8172 5.38574 18.5056 5.16602C18.5203 5.3125 19.1942 6.7186 18.6376 8.37399C18.5644 8.59371 20.8349 10.6737 19.5753 14.0283Z" fill="#ECECF1"/>
+								<path d="M19.5753 14.0283C19.0624 15.3905 17.7734 17.1192 14.5069 17.6025C14.9317 18.2323 15.4444 18.5693 15.4297 19.8877V24.6338C14.4922 24.8682 13.5107 25 12.5 25V6.08879C13.3936 6.08879 14.2725 6.22059 15.1661 6.455L15.2685 6.46969C15.2685 6.46969 15.2979 6.46969 15.3711 6.42582C17.9052 4.88754 17.8173 5.38574 18.5059 5.16602C18.5205 5.3125 19.1944 6.7186 18.6377 8.37399C18.5644 8.59371 20.8349 10.6737 19.5753 14.0283Z" fill="#E2E2E7"/>
+								</svg>
+								</span>
+							</a>
+
+							<br>
+
+							<a href="https://www.instagram.com/hikaybanks/?hl=en">
+								<span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+								<path d="M21.3379 0H3.66211C1.6407 0 0 1.6407 0 3.66211V21.3379C0 23.3593 1.6407 25 3.66211 25H21.3379C23.3593 25 25 23.3593 25 21.3379V3.66211C25 1.6407 23.3593 0 21.3379 0Z" fill="#FF5B5B"/>
+								<path d="M25 3.66211V21.3379C25 23.3593 23.3593 25 21.3379 25H12.5V0H21.3379C23.3593 0 25 1.6407 25 3.66211Z" fill="#FF3997"/>
+								<path d="M19.873 7.32422C18.6615 7.32422 17.6758 6.3385 17.6758 5.12695C17.6758 3.91541 18.6615 2.92969 19.873 2.92969C21.0846 2.92969 22.0703 3.91541 22.0703 5.12695C22.0703 6.3385 21.0846 7.32422 19.873 7.32422ZM19.873 4.39453C19.4689 4.39453 19.1406 4.72279 19.1406 5.12695C19.1406 5.53112 19.4689 5.85938 19.873 5.85938C20.2772 5.85938 20.6055 5.53112 20.6055 5.12695C20.6055 4.72279 20.2772 4.39453 19.873 4.39453Z" fill="#E2E2E7"/>
+								<path d="M12.5 5.85938C8.86726 5.85938 5.9082 8.81824 5.9082 12.4512C5.9082 16.0839 8.86726 19.043 12.5 19.043C16.1327 19.043 19.1406 16.0839 19.1406 12.4512C19.1406 8.81824 16.1327 5.85938 12.5 5.85938ZM12.5 17.5781C9.67293 17.5781 7.37305 15.2782 7.37305 12.4512C7.37305 9.6241 9.67293 7.32422 12.5 7.32422C15.3271 7.32422 17.6758 9.6241 17.6758 12.4512C17.6758 15.2782 15.3271 17.5781 12.5 17.5781Z" fill="#ECECF1"/>
+								<path d="M19.1406 12.4512C19.1406 16.0839 16.1327 19.043 12.5 19.043V17.5781C15.3271 17.5781 17.6758 15.2782 17.6758 12.4512C17.6758 9.6241 15.3271 7.32422 12.5 7.32422V5.85938C16.1327 5.85938 19.1406 8.81824 19.1406 12.4512Z" fill="#E2E2E7"/>
+								</svg>
+								</span>
+							</a>
+
+							<a href="https://dribbble.com/ikdaniel15">
+								<span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+								<path d="M12.5 0C5.62992 0 0 5.62992 0 12.5C0 19.3701 5.62992 25 12.5 25C19.3701 25 25 19.3701 25 12.5C25 5.62992 19.3701 0 12.5 0Z" fill="#FF5CA8"/>
+								<path d="M25 12.5C25 19.3701 19.3701 25 12.5 25V0C19.3701 0 25 5.62992 25 12.5Z" fill="#FF3997"/>
+								<path d="M12.5 1.46484C6.43559 1.46484 1.46484 6.43559 1.46484 12.5C1.46484 18.5644 6.43559 23.5352 12.5 23.5352C18.5644 23.5352 23.5352 18.5644 23.5352 12.5C23.5352 6.43559 18.5644 1.46484 12.5 1.46484Z" fill="#FF7CB9"/>
+								<path d="M23.5352 12.5C23.5352 18.5644 18.5644 23.5352 12.5 23.5352V1.46484C18.5644 1.46484 23.5352 6.43559 23.5352 12.5Z" fill="#FF5CA8"/>
+								<path d="M24.4579 12.5586L24.0184 13.9648C22.4658 13.4813 20.7763 13.2324 19.0917 13.2324C17.949 13.2324 16.8504 13.3497 15.7811 13.5693C16.8212 16.6748 17.451 20.0048 17.5975 23.4034L16.1327 23.4619C15.9862 20.166 15.3711 16.9386 14.3604 13.9355C13.7157 14.126 13.0859 14.3604 12.4999 14.6387C9.14547 16.1621 6.66992 18.8477 6.05461 21.9677L4.61914 21.6894C5.38074 17.837 8.39836 14.6387 12.4999 12.998C12.9394 12.8222 13.3788 12.6759 13.8475 12.5294C13.5986 11.8994 13.335 11.2843 13.0418 10.6689C12.8661 10.7275 12.6756 10.7716 12.4999 10.8154C10.2733 11.4307 7.78324 11.7676 5.1757 11.7676C3.69617 11.7676 2.16782 11.665 0.761719 11.4454L0.981445 9.99508C2.31449 10.2001 3.76942 10.3027 5.1757 10.3027C7.75387 10.3027 10.2294 9.95121 12.412 9.3214C11.0645 6.72855 9.3652 4.29192 7.3436 2.19727L8.39836 1.17188C9.95113 2.7832 11.3134 4.57039 12.4999 6.48918C12.9688 7.25098 13.4082 8.0761 13.8183 8.88195C16.953 7.75394 19.3456 5.97668 20.2245 3.94039L21.5722 4.52633C20.5322 6.91395 17.9052 8.94051 14.4483 10.2148C14.7412 10.8593 15.0195 11.504 15.2684 12.1632C16.4842 11.9141 17.7734 11.7676 19.0917 11.7676C20.9228 11.7676 22.7586 12.0312 24.4579 12.5586Z" fill="#FF5CA8"/>
+								<path d="M24.4581 12.5586L24.0187 13.9649C22.4661 13.4814 20.7766 13.2325 19.092 13.2325C17.9493 13.2325 16.8507 13.3498 15.7814 13.5693C16.8215 16.6748 17.4513 20.0049 17.5978 23.4034L16.1329 23.462C15.9864 20.1661 15.3713 16.9386 14.3606 13.9355C13.7159 14.1261 13.0861 14.3605 12.5002 14.6387V12.998C12.9396 12.8222 13.3789 12.6757 13.8477 12.5294C13.5988 11.8994 13.335 11.2841 13.0421 10.669C12.8662 10.7275 12.6759 10.7714 12.5 10.8153V6.48922C12.9688 7.25101 13.4083 8.07613 13.8186 8.88199C16.9533 7.75398 19.3459 5.97672 20.2248 3.94043L21.5725 4.52637C20.5324 6.91399 17.9054 8.94054 14.4485 10.2148C14.7415 10.8593 15.0198 11.504 15.2687 12.1632C16.4845 11.9141 17.7736 11.7676 19.092 11.7676C20.923 11.7676 22.7589 12.0312 24.4581 12.5586Z" fill="#FF3997"/>
+								</svg>
+								</span>
+							</a>
+
+							<a href="https://www.linkedin.com/in/iwu-ikechukwu-a95133145/">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+									<path d="M21.3379 0H3.66211C1.6407 0 0 1.68953 0 3.71094V21.3379C0 23.3593 1.6407 25 3.66211 25H21.3379C23.3593 25 25 23.3593 25 21.3379V3.71094C25 1.68953 23.3593 0 21.3379 0Z" fill="#25D9F8"/>
+									<path d="M25 3.71094V21.3379C25 23.3593 23.3593 25 21.3379 25H12.5V0H21.3379C23.3593 0 25 1.68953 25 3.71094Z" fill="#00C0F1"/>
+									<path d="M5.9082 9.57031H8.83789V19.873H5.9082V9.57031Z" fill="#ECECF1"/>
+									<path d="M5.9082 5.17578H8.83789V8.10547H5.9082V5.17578Z" fill="#ECECF1"/>
+									<path d="M19.0918 13.4668V19.873H16.1621V13.9648C16.1621 13.1592 15.5029 12.5 14.6973 12.5C13.8916 12.5 13.2324 13.1592 13.2324 13.9648V19.873H10.3027V9.57031H13.2324V10.1269C13.9942 9.87797 14.4922 9.57031 15.4297 9.57031C17.4219 9.57031 19.0918 11.3573 19.0918 13.4668Z" fill="#ECECF1"/>
+									<path d="M19.0918 13.4668V19.873H16.1621V13.9648C16.1621 13.1592 15.5029 12.5 14.6973 12.5C13.8916 12.5 13.2324 13.1592 13.2324 13.9648V19.873H12.5V9.57031H13.2324V10.1269C13.9942 9.87797 14.4922 9.57031 15.4297 9.57031C17.4219 9.57031 19.0918 11.3573 19.0918 13.4668Z" fill="#E2E2E7"/>
+									</svg>
+								</span>
+							</a>
+
+							<a href="https://www.behance.net/ikdaniel15d8c1">
+								<span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+									<path d="M21.3379 0H3.71094C1.68953 0 0 1.6407 0 3.66211V21.3379C0 23.3593 1.68953 25 3.71094 25H21.3379C23.3593 25 25 23.3593 25 21.3379V3.66211C25 1.6407 23.3593 0 21.3379 0Z" fill="#25D9F8"/>
+									<path d="M25 3.66211V21.3379C25 23.3593 23.3593 25 21.3379 25H12.5V0H21.3379C23.3593 0 25 1.6407 25 3.66211Z" fill="#00C0F1"/>
+									<path d="M11.7676 10.3027C11.7676 8.68702 10.4536 7.37305 8.83789 7.37305H4.44336V17.627H8.83789C10.4536 17.627 11.7676 16.313 11.7676 14.6973C11.7676 13.818 11.3705 13.0373 10.7553 12.5C11.3705 11.9627 11.7676 11.182 11.7676 10.3027ZM10.3027 14.6973C10.3027 15.5048 9.64546 16.1621 8.83789 16.1621H5.9082V13.2324H8.83789C9.64546 13.2324 10.3027 13.8897 10.3027 14.6973ZM5.9082 11.7676V8.83789H8.83789C9.64546 8.83789 10.3027 9.49516 10.3027 10.3027C10.3027 11.1103 9.64546 11.7676 8.83789 11.7676H5.9082Z" fill="#ECECF1"/>
+									<path d="M20.5566 12.9648C20.5566 10.9457 18.9137 9.30273 16.8945 9.30273C14.8754 9.30273 13.2324 10.9457 13.2324 12.9648C13.2324 14.984 14.8754 16.627 16.8945 16.627C18.1976 16.627 19.413 15.9252 20.0659 14.7967L18.7984 14.0627C18.4059 14.7408 17.6764 15.1621 16.8945 15.1621C15.9397 15.1621 15.1251 14.5499 14.8224 13.6973H20.5566V12.9648ZM14.8224 12.2324C15.1249 11.3798 15.9397 10.7676 16.8945 10.7676C17.8493 10.7676 18.664 11.3798 18.9667 12.2324H14.8224Z" fill="#E2E2E7"/>
+									<path d="M13.9648 7.37305H19.8242V8.83789H13.9648V7.37305Z" fill="#E2E2E7"/>
+								</svg>
+								</span>
+							</a>
+						</div>
+					</div>
+			
+				</div>
+			</div>
+		</footer>
+	</main>
+	<script src="js/jquery.js"></script>
+	<script>
+		$(document).ready(function() {
+			setTimeout(function() {
+				if ($(document).innerWidth()>=1000) {
+					$('.body').css({
+						width: '1000px',
+						boxShadow:' 0 0 3em 14em #eee',
+						background: '#fff',
+					});
+				} else {}
+
+				$('header').css({
+					height: '600px',
+				});
+				setTimeout(function() {$('.container,section,footer').show();}, 300);
+				
+				setTimeout(function() {$('.fiver').removeClass('card-swipe2').addClass('slideOutRight t5');$('.proff').removeClass('proff').addClass('shh') }, 1600);
+				$('.hire').mouseover(function(event) {
+					$('.puff').css('opacity', '1');
+				}).mouseout(function(event) {
+					$('.puff').css('opacity', '0');
+				});
+			}, 1000);
+			$('.cliss').click(function(event) {
+				var q=$(this).find('img').attr('src');
+				$('.img-src').attr('src', q);
+				$('.modalls').fadeIn('slow');
+				$('.links').attr('href', '##').find('strong').html($(this).data('info'));
+			});
+			$('.modalls').click(function(event) {
+				$(this).fadeOut('slow');
+			});
+			$(document).on('click', '.pisces', function(event) {
+				event.preventDefault();
+				var idd=$(this).html();
+				    $('.body').animate({
+				        scrollTop: $("#"+idd).offset().top
+				    }, 800);
+			});
+		});
+	</script>
+</body>
+</html>
