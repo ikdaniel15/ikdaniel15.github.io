@@ -287,19 +287,19 @@
 				<div class="container">
 					<div class="row">
 				
-						<div class="col-sm-6 cliss" data-info="Behance" style="background: #eff; ">
+						<div class="col-sm-6 cliss"  data-url="https://www.behance.net/gallery/70332029/Mobile-Blog-Design?" data-info="Behance" style="background: #eff; ">
 							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.1&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7pj2&amp;disp=thd&amp;attbid=ANGjdJ8rDd-r4keGwFeYhbSFOT8Ky1SjL6YFqygvyVbQ4zxt3hxFhV4QU3Uz-Gr5xcMINDV_YR92i365_q4kjwAAqX24fLsD92cERoZzDnBNezbGYcRj4f9whDGRlos&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying lOVREN.png" aria-hidden="true">
 						</div>
-						<div class="col-sm-6 cliss" data-info="Behance">
+						<div class="col-sm-6 cliss"  data-url="https://www.behance.net/gallery/70331757/Daybreak-Lights?" data-info="Behance">
 							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.2&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7nr0&amp;disp=thd&amp;attbid=ANGjdJ-KyDMg7jzwUB7zpxvHh1Vz-67tB7yU-30AReeg_pvFJ9GUdNnyw3kYbKoitPVzYJaRfaktq1G8NBUzAwpN8KC1G4yj9vmDJys-poOXpAjlHXvC6U_mKvY0aAs&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying daybreak.png" aria-hidden="true">
 						</div>
 				
 					</div><div class="row">
 				
-						<div class="col-sm-6 cliss" data-info="Behance" style="">
+						<div class="col-sm-6 cliss"  data-url="https://www.behance.net/gallery/70331851/NIS-redesign?share=1" data-info="Behance" style="">
 							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.3&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6so7p51&amp;disp=thd&amp;attbid=ANGjdJ-R32m0PTxqefLQtRvDXZ4D65T0EFF6cPVL2MOilmdBfbmhUNf7AL4oV2RtWzq9hmNRGnjegA92aHmOATsSdcFN8JN9rdngixGHW_dXRolv-K-ATjjz4COohfs&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying immi.png" aria-hidden="true">
 						</div>
-						<div class="col-sm-6 cliss" data-info="Github" style="background: #eff; ">
+						<div class="col-sm-6 cliss"  data-url="https://github.com/" data-info="Github" style="background: #eff; ">
 							<img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=d4a0c0fb92&amp;attid=0.4&amp;permmsgid=msg-f:1611891481450155561&amp;th=165e96c320508e29&amp;view=fimg&amp;realattid=f_jm6ssjza3&amp;disp=thd&amp;attbid=ANGjdJ9_szmGOazjPSJ3ZC0EyvvSOqJGkFueXyr0PYrEh2DU-dLBCithcZSTiMX5rnQXQr5XDV8g0SwgfO9SMvUeLr74tAHbDNkQXYHlS0ln27yb-Jy-I2XR5gpzfAc&amp;ats=2524608000000&amp;sz=w887-h662" class="aLF-aPX-J1-J3" alt="Displaying VOLKS.png" aria-hidden="true">
 						</div>
 				
@@ -489,7 +489,7 @@
 				var q=$(this).find('img').attr('src');
 				$('.img-src').attr('src', q);
 				$('.modalls').fadeIn('slow');
-				$('.links').attr('href', '##').find('strong').html($(this).data('info'));
+				$('.links').attr('href', $(this).data('url')).find('strong').html($(this).data('info'));
 			});
 			$('.modalls').click(function(event) {
 				$(this).fadeOut('slow');
